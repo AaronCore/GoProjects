@@ -56,3 +56,9 @@ func f6(a, b string) string {
 func f7(x [3]int) {
 	x[0] = 100
 }
+
+// 可变参数函数
+func f8(x ...int) int {
+	fmt.Println(x)
+	return 10
+}
