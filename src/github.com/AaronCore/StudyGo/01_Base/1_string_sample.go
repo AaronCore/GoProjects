@@ -6,6 +6,17 @@ import (
 )
 
 func main() {
+	// %T：查看类型
+	// %d：十进制数
+	// %b：二进制数
+	// %o：八进制数
+	// %x：六进制数
+	// %c：字符
+	// %s：字符串
+	// %p：指针
+	// %v：值
+	// %f：浮点数
+
 	path := "D:\\Program Files (x86)\\Haozip"
 	fmt.Println(path)
 
