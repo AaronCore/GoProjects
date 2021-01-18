@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 
+// 全局变量
+var m = 10
+
 func main() {
 	fmt.Println("----- 1.函数测试 -----")
 	a := f4(1, 2)
@@ -19,6 +22,22 @@ func main() {
 	y[0] = 55
 	fmt.Println("y：", y)
 
+	fmt.Println("----- 3.变量作用域 -----")
+	f9()
+
+	fmt.Println("----- 4.匿名函数 -----")
+	// 匿名函数，函数内部没有办法什么带名称的函数
+	var f10 = func(x, y int) {
+		fmt.Println(x + y)
+	}
+	f10(1, 2)
+	// 如果只是调用一次的函数，可以简写成立即执行的函数
+	func() {
+		fmt.Println("立即执行的函数...")
+	}()
+	func(x, y int) {
+		fmt.Println(x + y)
+	}(100, 200)
 }
 
 // 无参无返回值函数
@@ -37,7 +56,7 @@ func f3(x int, y int) {
 	fmt.Println(m)
 }
 
-// 有参有返回值函数
+// 有参有返回值函数,命名返回值
 func f4(x int, y int) (ret int) {
 	ret = x + y
 	return
@@ -58,7 +77,11 @@ func f7(x [3]int) {
 }
 
 // 可变参数函数
-func f8(x ...int) int {
+func f8(x ...int) {
 	fmt.Println(x)
-	return 10
+}
+
+// 全局变量函数
+func f9() {
+	fmt.Println("m：", m)
 }
