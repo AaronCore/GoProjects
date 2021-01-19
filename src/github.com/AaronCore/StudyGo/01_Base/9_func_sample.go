@@ -85,3 +85,24 @@ func f8(x ...int) {
 func f9() {
 	fmt.Println("m：", m)
 }
+
+// 递归函数
+
+// 数字阶乘
+func factorial(x int) int {
+	if x <= 1 {
+		return 1
+	}
+	return x * factorial(x-1)
+}
+
+// 斐波那契数列
+func fibonaci(x int) int {
+	if x == 0 {
+		return 0
+	}
+	if x == 1 {
+		return 1
+	}
+	return fibonaci(x-1) + fibonaci(x-2)
+}

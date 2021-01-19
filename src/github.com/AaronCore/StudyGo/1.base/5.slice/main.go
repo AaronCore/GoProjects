@@ -1,37 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
+// 切片 Slice
+//    1. 切片：切片是数组的一个引用，因此切片是引用类型。但自身是结构体，值拷贝传递。
+//    2. 切片的长度可以改变，因此，切片是一个可变的数组。
+//    3. 切片遍历方式和数组一样，可以用len()求长度。表示可用元素数量，读写操作不能超过该限制。
+//    4. cap可以求出slice最大扩张容量，不能超出数组限制。0 <= len(slice) <= len(array)，其中array是slice引用的数组。
+//    5. 切片的定义：var 变量名 []类型，比如 var str []string  var arr []int。
+//    6. 如果 slice == nil，那么 len、cap 结果都等于 0。
 func main() {
-	// 切片 slice,引用类型
-	// 切片之间是不能比较的，我们不能使用==操作符来判断两个切片是否含有全部相等元素。
-	// 切片唯一合法的比较操作是和nil比较。
-	// 一个nil值的切片并没有底层数组，一个nil值的切片的长度和容量都是0。但是我们不能说一个长度和容量都是0的切片一定是nil，例如下面的示例
-	/*
-	var s1 []int         //len(s1)=0;cap(s1)=0;s1==nil
-	s2 := []int{}        //len(s2)=0;cap(s2)=0;s2!=nil
-	s3 := make([]int, 0) //len(s3)=0;cap(s3)=0;s3!=nil
-	*/
-
+	fmt.Println("1、切片声明")
 	var s1 []int
 	var s2 []string
-
 	fmt.Println(s1 == nil, s2 == nil)
-
-	//if s1 == nil {
-	//	fmt.Println("空")
-	//} else {
-	//	fmt.Println("非空")
-	//}
-
 	s1 = []int{1, 2, 3}
 	s2 = []string{"福田区", "南山区", "宝安区", "龙岗区"}
-
-	fmt.Println(s1 == nil, s2 == nil, s1, s2)
 	fmt.Printf("s1 len：%d，cap：%d \n", len(s1), cap(s1))
 	fmt.Printf("s2 len：%d，cap：%d \n", len(s2), cap(s2))
 
-	// 由数组得到切片
 	s3 := [...]int{1, 3, 5, 7, 9, 11, 13, 15, 17, 19} // len 10,cap 10
 	s4 := s3[0:7]                                     // => [0,4]
 	s5 := s3[:3]                                      // => [0,3]
@@ -59,8 +49,36 @@ func main() {
 	fmt.Println("s8：", s8)
 
 	// 使用make函数创建切片
-
 	// var slice []type = make([]type, len,cap) 不写cap的话，cap的默认等于len
 	s10 := make([]int, 5, 10)
 	fmt.Printf("s10=%v	len=%d	cap=%d \n", s1, len(s10), cap(s10))
+
+	fmt.Println("2、切片扩容")
+	ss := []string{"成都", "重庆"}
+	s2 = append(s2, ss...) // ...表示拆开追加
+	fmt.Printf("1	s2=%v	len=%d	cap=%d \n", s1, len(s2), cap(s2))
+
+	a1 := make([]string, 5)
+	copy(a1, ss)
+	fmt.Printf("2	a1=%v	len=%d	cap=%d \n", a1, len(a1), cap(a1))
+
+	b1 := []int{1, 2, 3, 4, 5, 6, 7, 8}
+	b1 = append(b1[:2], b1[3:]...)
+	fmt.Printf("3	b1=%v	len=%d	cap=%d \n", b1, len(b1), cap(b1))
+
+	b2 := []int{8, 9, 7, 3, 4, 2, 1}
+	// 顺序
+	sort.Ints(b2[:])
+	fmt.Printf("4 顺序	b2=%v \n", b2)
+	// 逆序
+	sort.Sort(sort.Reverse(sort.IntSlice(b2)))
+	fmt.Printf("4 逆序	b2=%v \n", b2)
+
+	b5 := []string{"abc", "12", "kk", "Jordan", "Ko", "DD"}
+	// 顺序
+	sort.Strings(b5)
+	fmt.Printf("5 顺序	b5=%v \n", b5)
+	// 逆序
+	sort.Sort(sort.Reverse(sort.StringSlice(b5)))
+	fmt.Printf("5 逆序	s5=%v \n", b5)
 }
