@@ -28,18 +28,4 @@ func main() {
 	userInfo["age"] = 27
 	userInfo["married"] = false
 	fmt.Println(userInfo)
-
-	fmt.Println("2、空接口断言")
-	// 格式：x.(T)
-	// x：表示类型为interface{}的变量
-	// T：表示断言x可能是的类型。
-	var m interface{}
-	m = "aaron"
-	v, ok := m.(string)
-	if !ok {
-		fmt.Println("类型断言失败")
-	} else {
-		fmt.Println(v)
-	}
-
 }
