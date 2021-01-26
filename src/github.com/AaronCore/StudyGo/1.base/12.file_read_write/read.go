@@ -9,13 +9,13 @@ import (
 )
 
 func main() {
-	//readFromFile()
-	//readFromFileBufio()
-	readFromFileIoutil()
+	//readFile()
+	//bufioReadFile()
+	ioutilReadFile()
 }
 
 // 打开文件
-func readFromFile() {
+func readFile() {
 	file, err := os.Open("F:\\GoProjects\\src\\github.com\\AaronCore\\StudyGo\\1.base\\1.string\\main.go")
 	if err != nil {
 		fmt.Println("open file error：", err)
@@ -42,7 +42,7 @@ func readFromFile() {
 }
 
 // bufio打开文件
-func readFromFileBufio() {
+func bufioReadFile() {
 	file, err := os.Open("F:\\GoProjects\\src\\github.com\\AaronCore\\StudyGo\\1.base\\1.string\\main.go")
 	if err != nil {
 		fmt.Println("open file error：", err)
@@ -68,7 +68,7 @@ func readFromFileBufio() {
 }
 
 // ioutil打开文件
-func readFromFileIoutil() {
+func ioutilReadFile() {
 	content, err := ioutil.ReadFile("F:\\GoProjects\\src\\github.com\\AaronCore\\StudyGo\\1.base\\1.string\\main.go")
 	if err != nil {
 		fmt.Println("read file failed, err:", err)
