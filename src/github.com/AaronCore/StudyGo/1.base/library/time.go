@@ -37,8 +37,16 @@ func main() {
 	//	fmt.Println(i) //每秒都会执行的任务
 	//}
 
+	// 时间停留
+	// 方式1
+	time.Sleep(1 * time.Second)
+	// 方式2
+	a := 1000
+	time.Sleep(time.Duration(a))
+
 	fmt.Println("5、时间格式化")
 	// 格式化的模板为Go的出生时间2006年1月2号15点04分 Mon Jan
+	// time.Parse("2006-01-02 15:04:05", "2020-01-26 17:25:01")
 	// 24小时制
 	fmt.Println(now.Format("2006-01-02 15:04:05.000 Mon Jan"))
 	// 12小时制
