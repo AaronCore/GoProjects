@@ -13,7 +13,7 @@ type SqlServerConfig struct {
 type MySqlConfig struct {
 	UserName string  `ini:"username"`
 	PassWord string  `ini:"password"`
-	Database string  `ini:"database"`
+	DataBase string  `ini:"database"`
 	Host     string  `ini:"host"`
 	Port     int     `ini:"port"`
 	TimeOut  float32 `ini:"timeout"`

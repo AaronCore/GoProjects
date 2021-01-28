@@ -25,10 +25,15 @@ func parseFile2(fileName string) {
 	conf := util.Config{
 		SqlServerConf: util.SqlServerConfig{
 			Ip:   "127.0.0.1",
-			Port: 9300,
+			Port: 8500,
 		},
 		MySqlConf: util.MySqlConfig{
-			Port: 9400,
+			UserName: "127.0.0.1",
+			PassWord: "123456",
+			DataBase: "dev",
+			Host:     "127.0.0.1",
+			Port:     3306,
+			TimeOut:  3600,
 		},
 	}
 	err := util.MarshalFile(fileName, conf)
