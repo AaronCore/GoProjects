@@ -24,7 +24,7 @@ func NewConsoleLogger(levelStr string) ConsoleLogger {
 }
 
 func (c ConsoleLogger) log(level LogLevel, format string, a ...interface{}) {
-	if c.enable(level) {
+	if level >= c.Level {
 		msg := fmt.Sprintf(format, a...) // 格式化输出
 		levelStr := getLoggerString(level)
 		funcName, fileName, lineNo := getRunInfo(3)
@@ -33,9 +33,9 @@ func (c ConsoleLogger) log(level LogLevel, format string, a ...interface{}) {
 }
 
 // 判断是否需要记录日志
-func (c ConsoleLogger) enable(level LogLevel) bool {
-	return level >= c.Level
-}
+//func (c ConsoleLogger) enable(level LogLevel) bool {
+//	return level >= c.Level
+//}
 
 func (c ConsoleLogger) Debug(format string, a ...interface{}) {
 	c.log(DEBUG, format, a...)

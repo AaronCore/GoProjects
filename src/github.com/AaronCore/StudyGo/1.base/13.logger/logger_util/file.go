@@ -61,7 +61,7 @@ func (f *FileLogger) close() {
 }
 
 func (f *FileLogger) log(level LogLevel, format string, a ...interface{}) {
-	if f.enable(level) {
+	if level >= f.Level {
 		msg := fmt.Sprintf(format, a...) // 格式化输出
 		levelStr := getLoggerString(level)
 		funcName, fileName, lineNo := getRunInfo(3)
@@ -132,9 +132,9 @@ func (f *FileLogger) checkFileSize(file *os.File) bool {
 }
 
 // 判断是否需要记录日志
-func (f *FileLogger) enable(level LogLevel) bool {
-	return level >= f.Level
-}
+//func (f *FileLogger) enable(level LogLevel) bool {
+//	return level >= f.Level
+//}
 
 func (f *FileLogger) Debug(format string, a ...interface{}) {
 	f.log(DEBUG, format, a...)

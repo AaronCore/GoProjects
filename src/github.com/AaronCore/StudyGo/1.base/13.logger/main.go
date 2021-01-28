@@ -8,7 +8,7 @@ import (
 var log logger_util.Logger
 
 func main() {
-	log := logger_util.NewConsoleLogger("info")
+	log := logger_util.NewConsoleLogger("error")
 
 	log.Debug("debug info...")
 	log.Info("info...")
