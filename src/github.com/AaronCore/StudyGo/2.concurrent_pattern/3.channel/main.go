@@ -25,8 +25,11 @@ func main() {
 	wg.Wait()
 	//close(c) // 关闭通道
 
-	fmt.Println("1、channel练习---通道循环取值")
+	fmt.Println("2、channel练习---通道循环取值")
 	chan1()
+
+	fmt.Println("2、channel练习---单向通道")
+	chan2()
 }
 
 func recv(x chan int) {
@@ -59,6 +62,39 @@ func chan1() {
 	}()
 	// 在主goroutine中从ch2中接收值打印
 	for i := range ch2 { // 通道关闭后会退出for range循环
+		fmt.Println(i)
+	}
+}
+
+// 单向通道
+func chan2() {
+	ch1 := make(chan int)
+	ch2 := make(chan int)
+	go counter(ch1)
+	go squarer(ch1, ch2)
+	printer(ch2)
+}
+
+// 1.ch1 chan<- int是一个只能发送的通道，可以发送但是不能接收
+func counter(ch1 chan<- int) {
+	for i := 1; i <= 10; i++ {
+		ch1 <- i
+	}
+	close(ch1)
+}
+
+// 1.ch1 <-chan int是一个只能接收的通道，可以接收但是不能发送。
+// 2.ch2 chan<- int是一个只能发送的通道，可以发送但是不能接收；
+func squarer(ch1 <-chan int, ch2 chan<- int) {
+	for i := range ch1 {
+		ch2 <- i * i
+	}
+	close(ch2)
+}
+
+// ch2 chan<- int是一个只能发送的通道，可以发送但是不能接收
+func printer(ch2 <-chan int) {
+	for i := range ch2 {
 		fmt.Println(i)
 	}
 }
