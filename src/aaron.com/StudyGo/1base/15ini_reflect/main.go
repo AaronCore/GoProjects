@@ -1,7 +1,7 @@
 package main
 
 import (
-	"aaron.com/StudyGo/1base/15.ini.reflect/util"
+	"aaron.com/StudyGo/1base/15ini_reflect/util"
 	"fmt"
 	"io/ioutil"
 )
@@ -44,6 +44,6 @@ func parseFile2(fileName string) {
 
 // 配置文件反射
 func main() {
-	parseFile1("F:\\GoProjects\\src\\github.com\\AaronCore\\StudyGo\\1base\\15.ini.reflect\\config.ini")
+	parseFile1("F:\\GoProjects\\src\\github.com\\AaronCore\\StudyGo\\1base\\15ini_reflect\\config.ini")
 	//parseFile2("D:\\my.ini")
 }
