@@ -1,7 +1,7 @@
 package main
 
 import (
-	"aaron.com/StudyGo/3.socket/2.tcp_stick/proto"
+	"aaron.com/StudyGo/3socket/2tcp_stick/proto"
 	"bufio"
 	"fmt"
 	"io"

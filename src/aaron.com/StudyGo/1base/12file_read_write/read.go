@@ -16,7 +16,7 @@ func main() {
 
 // 打开文件
 func readFile() {
-	file, err := os.Open("F:\\GoProjects\\src\\github.com\\AaronCore\\StudyGo\\1.base\\1.string\\main.go")
+	file, err := os.Open("F:\\GoProjects\\src\\github.com\\AaronCore\\StudyGo\\1base\\1.string\\main.go")
 	if err != nil {
 		fmt.Println("open file error：", err)
 		return
@@ -43,7 +43,7 @@ func readFile() {
 
 // bufio打开文件
 func bufioReadFile() {
-	file, err := os.Open("F:\\GoProjects\\src\\github.com\\AaronCore\\StudyGo\\1.base\\1.string\\main.go")
+	file, err := os.Open("F:\\GoProjects\\src\\github.com\\AaronCore\\StudyGo\\1base\\1.string\\main.go")
 	if err != nil {
 		fmt.Println("open file error：", err)
 		return
@@ -69,7 +69,7 @@ func bufioReadFile() {
 
 // ioutil打开文件
 func ioutilReadFile() {
-	content, err := ioutil.ReadFile("F:\\GoProjects\\src\\github.com\\AaronCore\\StudyGo\\1.base\\1.string\\main.go")
+	content, err := ioutil.ReadFile("F:\\GoProjects\\src\\github.com\\AaronCore\\StudyGo\\1base\\1.string\\main.go")
 	if err != nil {
 		fmt.Println("read file failed, err:", err)
 		return
