@@ -22,7 +22,6 @@ func init() {
 func main() {
 	logger := log.New(os.Stdout, "<New>", log.Lshortfile|log.Ldate|log.Ltime)
 	logger.Println("这是自定义的logger记录的日志。")
-
 	// 配置日志前缀
 	log.SetPrefix("[log]")
 	log.Println("这是条普通的日志...")
