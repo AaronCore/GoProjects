@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-// flag.Type(flag名, 默认值, 帮助信息)*Type
+// flag.Type格式：flag.Type(flag名, 默认值, 帮助信息)*Type
 
 func main() {
 	//定义命令行参数方式1
