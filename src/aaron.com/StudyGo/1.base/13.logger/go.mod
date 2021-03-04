@@ -1,3 +1,3 @@
-module github.com/AaronCore/StudyGo/1.base/13.logger
+module aaron.com/StudyGo/1.base/13.logger
 
 go 1.15

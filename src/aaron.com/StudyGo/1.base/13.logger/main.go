@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/AaronCore/StudyGo/1.base/13.logger/logger_util"
+	"aaron.com/StudyGo/1.base/13.logger/logger_util"
 )
 
 // 声明全局接口变量

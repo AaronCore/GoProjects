@@ -1,8 +1,8 @@
 package main
 
 import (
+	"aaron.com/StudyGo/1.base/15.ini.reflect/util"
 	"fmt"
-	"github.com/AaronCore/StudyGo/1.base/15.ini.reflect/util"
 	"io/ioutil"
 )
 

@@ -1,9 +1,8 @@
 package main
 
 import (
+	"aaron.com/StudyGo/1.base/11.package/util"
 	"fmt"
-
-	"github.com/AaronCore/StudyGo/1.base/11.package/util"
 )
 
 func main() {
