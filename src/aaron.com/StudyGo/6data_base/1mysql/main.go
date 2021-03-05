@@ -34,7 +34,7 @@ func initDb() (err error) {
 	return
 }
 
-// queryRow
+// queryRow 查询单条
 func queryRow() {
 	querySql := "select id,name,age from student where id=?;"
 	s := student{}
@@ -46,7 +46,7 @@ func queryRow() {
 	fmt.Println(s)
 }
 
-// queryAll
+// queryAll 查询全部
 func queryAll() {
 	querySql := "select id,name,age from student;"
 	rows, err := db.Query(querySql)
@@ -69,6 +69,7 @@ func queryAll() {
 	fmt.Println(students)
 }
 
+// add 添加
 func add(name string, age int64) {
 	addSql := "insert into student(name, age) values (?,?)"
 	ret, err := db.Exec(addSql, name, age)
@@ -84,6 +85,7 @@ func add(name string, age int64) {
 	fmt.Printf("insert success, the id is %d.\n", theID)
 }
 
+// update 修改
 func update() {
 	sqlStr := "update student set age=? where id = ?"
 	ret, err := db.Exec(sqlStr, 28, 1)
@@ -99,7 +101,7 @@ func update() {
 	fmt.Printf("update success, affected rows:%d\n", n)
 }
 
-// 删除数据
+// delete 删除数据
 func delete() {
 	sqlStr := "delete from student where id = ?"
 	ret, err := db.Exec(sqlStr, 3)
@@ -142,7 +144,7 @@ func prepare() {
 	}
 }
 
-// 预处理插入示例
+// prepareInsert 预处理插入
 func prepareInsert() {
 	sqlStr := "insert into student(name, age) values (?,?)"
 	stmt, err := db.Prepare(sqlStr)
