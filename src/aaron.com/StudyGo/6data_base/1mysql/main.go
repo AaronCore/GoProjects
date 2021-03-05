@@ -115,6 +115,55 @@ func delete() {
 	fmt.Printf("delete success, affected rows:%d\n", n)
 }
 
+// prepare 预处理
+func prepare() {
+	sqlStr := "select id, name, age from student where id > ?"
+	stmt, err := db.Prepare(sqlStr)
+	if err != nil {
+		fmt.Printf("prepare failed, err:%v\n", err)
+		return
+	}
+	defer stmt.Close()
+	rows, err := stmt.Query(0)
+	if err != nil {
+		fmt.Printf("query failed, err:%v\n", err)
+		return
+	}
+	defer rows.Close()
+	// 循环读取结果集中的数据
+	for rows.Next() {
+		var s student
+		err := rows.Scan(&s.id, &s.name, &s.age)
+		if err != nil {
+			fmt.Printf("scan failed, err:%v\n", err)
+			return
+		}
+		fmt.Printf("id:%d name:%s age:%d\n", s.id, s.name, s.age)
+	}
+}
+
+// 预处理插入示例
+func prepareInsert() {
+	sqlStr := "insert into student(name, age) values (?,?)"
+	stmt, err := db.Prepare(sqlStr)
+	if err != nil {
+		fmt.Printf("prepare failed, err:%v\n", err)
+		return
+	}
+	defer stmt.Close()
+	_, err = stmt.Exec("CCC", 23)
+	if err != nil {
+		fmt.Printf("insert failed, err:%v\n", err)
+		return
+	}
+	_, err = stmt.Exec("DDD", 24)
+	if err != nil {
+		fmt.Printf("insert failed, err:%v\n", err)
+		return
+	}
+	fmt.Println("insert success.")
+}
+
 func main() {
 	err := initDb()
 	if err != nil {
@@ -126,4 +175,5 @@ func main() {
 	//add("王五",22)
 	//update()
 	//delete()
+	//prepareInsert()
 }
