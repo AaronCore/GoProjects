@@ -1,4 +1,4 @@
-module aaron.com/StudyGo/6data_base/4sqlx
+module aaron.com/StudyGo/6sql_nosql/3sqlx
 
 go 1.16
 
