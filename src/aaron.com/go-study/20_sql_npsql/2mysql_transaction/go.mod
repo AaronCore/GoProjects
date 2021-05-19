@@ -1,4 +1,4 @@
-module aaron.com/StudyGo/6sql_nosql/2mysql_transaction
+module aaron.com/go-study/20_sql_nosql/2mysql_transaction
 
 go 1.16
 
