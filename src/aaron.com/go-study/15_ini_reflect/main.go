@@ -1,7 +1,7 @@
 package main
 
 import (
-	"aaron.com/StudyGo/1base/15ini_reflect/util"
+	"aaron.com/go-study/15_ini_reflect/util"
 	"fmt"
 	"io/ioutil"
 )

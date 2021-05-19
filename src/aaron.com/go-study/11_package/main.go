@@ -1,7 +1,7 @@
 package main
 
 import (
-	"aaron.com/StudyGo/1base/11package/util"
+	"aaron.com/go-study/11_package/util"
 	"fmt"
 )
 
