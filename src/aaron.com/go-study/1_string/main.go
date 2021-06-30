@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"strings"
 )
@@ -18,7 +19,16 @@ import (
 // %t：布尔值
 // %q：用双引号包括字符串值
 func main() {
-	f9()
+	var buffer bytes.Buffer
+	buffer.WriteString("hello")
+	buffer.WriteString(",")
+	buffer.WriteString("world")
+	fmt.Println(buffer.String())
+
+	var builder strings.Builder
+	builder.WriteString("ABC")
+	builder.WriteString("DEF")
+	fmt.Println(builder.String())
 }
 
 // 求长度

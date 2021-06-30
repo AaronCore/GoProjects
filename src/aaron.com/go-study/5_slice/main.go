@@ -12,6 +12,12 @@ import (
 // 4. cap可以求出slice最大扩张容量，不能超出数组限制。0 <= len(slice) <= len(array)，其中array是slice引用的数组。
 // 5. 切片的定义：var 变量名 []类型，比如 var str []string  var arr []int。
 // 6. 如果 slice == nil，那么 len、cap 结果都等于 0。
+// 切片扩容策略：
+// 首先判断，如果新申请容量(cap)大于2倍的旧容量(old.cap)，最终容量(newcap)就是新申请的容量(cap)。
+// 否则判断，如果旧切片的长度小于1024，则最终容量(newcap)就是旧容量(old.cap)的两倍，即(newcap=doublecap)
+// 否则判断，如果旧切片长度大于等于1024，则最终容量(newcap)从旧容量(old.cap)开始循环增加原来的1/4，
+//   即(newcap=old.cap,for {newcap += newcap/4})直到最终容量(newcap)大于等于新申请的容量(cap)，即(newcap >= cap)
+// 如果最终容量(cap)计算值溢出，则最终容量(cap)就是新申请容量(cap)。
 func main() {
 	fmt.Println("1、切片声明")
 	var s1 []int
