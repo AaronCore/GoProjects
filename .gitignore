@@ -15,5 +15,5 @@
 # vendor/
 
 *.idea
-*.bin
-*.pkg
+/bin
+/pkg

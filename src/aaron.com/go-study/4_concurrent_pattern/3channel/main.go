@@ -1,8 +1,10 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"sync"
+	"time"
 )
 
 var (
@@ -97,4 +99,43 @@ func printer(ch2 <-chan int) {
 	for i := range ch2 {
 		fmt.Println(i)
 	}
+}
+
+// goroutine里处理错误
+func sample() {
+	gerrors := make(chan error)
+	wgDone := make(chan bool)
+
+	var wg sync.WaitGroup
+	wg.Add(2)
+
+	go func() {
+		wg.Done()
+	}()
+	go func() {
+		err := returnError()
+		if err != nil {
+			gerrors <- err
+		}
+		wg.Done()
+	}()
+
+	go func() {
+		wg.Wait()
+		close(wgDone)
+	}()
+
+	select {
+	case <-wgDone:
+		break
+	case err := <-gerrors:
+		close(gerrors)
+		fmt.Println(err)
+	}
+
+	time.Sleep(time.Second)
+}
+
+func returnError() error {
+	return errors.New("报错了...")
 }

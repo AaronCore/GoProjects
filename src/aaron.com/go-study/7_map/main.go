@@ -36,13 +36,16 @@ func main() {
 
 	// 如果key存在ok为true,v为对应的值；不存在ok为false,v为值类型的零值
 	fmt.Println("2	----- map key判断 -----")
-	v, ok := m1["A"]
-	if !ok {
+	if _, ok := m1["A"]; !ok {
 		fmt.Println("无此Key值")
-	} else {
-		fmt.Println("存在Key值")
 	}
-	fmt.Println(v)
+	//v, ok := m1["A"]
+	//if !ok {
+	//	fmt.Println("无此Key值")
+	//} else {
+	//	fmt.Println("存在Key值")
+	//}
+	//fmt.Println(v)
 
 	// 删除map键值
 	fmt.Println("3	----- map删除 -----")
