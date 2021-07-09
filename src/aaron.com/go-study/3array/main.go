@@ -19,13 +19,15 @@ func sample1() {
 	fmt.Println(arr)
 }
 
-// 数据类型：
-//		基本类型：整数、浮点、布尔、字符串
-//		复合类型：array、slice、map、struct、pointer、function
-// 值类型：理解存储的数值本身
-//		int、float、string、bool、array...
-// 引用类型：理解为存储的数据的内存地址
-//		slice、map...
+/*
+	数据类型：
+		基本类型：整数、浮点、布尔、字符串
+		复合类型：array、slice、map、struct、pointer、function
+	值类型：理解存储的数值本身
+		int、float、string、bool、array...
+	引用类型：理解为存储的数据的内存地址
+		slice、map...
+*/
 func main() {
 	sample1()
 }

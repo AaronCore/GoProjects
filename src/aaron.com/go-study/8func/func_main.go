@@ -2,20 +2,24 @@ package main
 
 import "fmt"
 
-// go函数特点：
-// 无需声明原型。
-// 支持不定 变参。
-// 支持多返回值。
-// 支持命名返回参数。
-// 支持匿名函数和闭包。
-// 函数也是一种类型，一个函数可以赋值给变量。
-// 不支持 嵌套 (nested) 一个包不能有两个名字一样的函数。
-// 不支持 重载 (overload)
-// 不支持 默认参数 (default parameter)。
+/*
+	go函数特点：
+		1.无需声明原型。
+		2.支持不定 变参。
+		3.支持多返回值。
+		4.支持命名返回参数。
+		5.支持匿名函数和闭包。
+		6.函数也是一种类型，一个函数可以赋值给变量。
+		7.不支持 嵌套 (nested) 一个包不能有两个名字一样的函数。
+		8.不支持 重载 (overload)
+		9.不支持 默认参数 (default parameter)。
 
-// 全局变量
-var m = 10
-
+	参数传递：传递的都是数据副本。修改数据，对于原始的数据没有影响
+		值类型的数据，默认都是值传递：基本数据类型int、float、bool、string、array、struct...
+	引用传递：传递的是数据的地址。导致多个变量指向同一个内存地址
+		引用类型的数据，默认都是引用传递：指针、slice、map、chan...
+*/
+var m = 10 // 全局变量
 func main() {
 	fmt.Println("----- 1.函数测试 -----")
 	a := f4(1, 2)
@@ -108,12 +112,12 @@ func factorial(x int) int {
 }
 
 // 斐波那契数列
-func fibonaci(x int) int {
+func fibonacci(x int) int {
 	if x == 0 {
 		return 0
 	}
 	if x == 1 {
 		return 1
 	}
-	return fibonaci(x-1) + fibonaci(x-2)
+	return fibonacci(x-1) + fibonacci(x-2)
 }

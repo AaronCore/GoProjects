@@ -6,18 +6,20 @@ import (
 	"strings"
 )
 
-// %T：查看类型
-// %d：十进制数
-// %b：二进制数
-// %o：八进制数
-// %x：六进制数
-// %c：字符
-// %s：字符串
-// %p：指针
-// %v：值
-// %f：浮点数
-// %t：布尔值
-// %q：用双引号包括字符串值
+/*
+	%T：查看类型
+	%d：十进制数
+	%b：二进制数
+	%o：八进制数
+	%x：六进制数
+	%c：字符
+	%s：字符串
+	%p：指针
+	%v：值
+	%f：浮点数
+	%t：布尔值
+	%q：用双引号包括字符串值
+*/
 func main() {
 	var buffer bytes.Buffer
 	buffer.WriteString("hello")
@@ -79,10 +81,11 @@ func f7() {
 
 // 字符串修改
 func f8() {
-	// Go语言的字符有以下两种：
-	// uint8类型，或者叫 byte 型，代表了ASCII码的一个字符。例：var b := 'x'
-	// rune类型，代表一个 UTF-8字符。例：var b := '中'
-
+	/*
+		Go语言的字符有以下两种：
+			uint8类型，或者叫 byte 型，代表了ASCII码的一个字符。例：var b := 'x'
+			rune类型，代表一个 UTF-8字符。例：var b := '中'
+	*/
 	s1 := "hello"
 	byteS1 := []byte(s1) // 强制类型转换
 	byteS1[0] = 'H'
