@@ -94,7 +94,7 @@ func squarer(ch1 <-chan int, ch2 chan<- int) {
 	close(ch2)
 }
 
-// ch2 chan<- int是一个只能发送的通道，可以发送但是不能接收
+// ch2 chan<- int是一个只能接收的通道，可以接收但是不能发送
 func printer(ch2 <-chan int) {
 	for i := range ch2 {
 		fmt.Println(i)
