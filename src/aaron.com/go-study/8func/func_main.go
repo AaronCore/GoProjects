@@ -101,7 +101,13 @@ func f9() {
 	fmt.Println("m：", m)
 }
 
-// 递归函数
+// 递归求和
+func recursion(x int) int {
+	if x == 1 {
+		return 1
+	}
+	return x + recursion(x-1)
+}
 
 // 数字阶乘
 func factorial(x int) int {
