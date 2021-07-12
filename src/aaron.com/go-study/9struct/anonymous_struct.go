@@ -11,7 +11,7 @@ func main() {
 		"aaron",
 		20,
 	}
-	fmt.Printf("%#v \n", p1)
+	fmt.Printf("%#v\n", p1)
 	fmt.Println(p1.string, p1.int)
 
 	fmt.Println("2、嵌套结构体")
@@ -27,19 +27,22 @@ func main() {
 	fmt.Println(p2.productName, p2.productType.productTypeName)
 }
 
+// card
 // 匿名结构体
 type card struct {
-	string
+	string // 匿名字段
 	int
 }
 
-// 嵌套结构体
+// product
+//嵌套结构体
 type product struct {
 	id          int64
 	productName string
 	productType productType
 }
 
+// productType
 type productType struct {
 	id              int64
 	productTypeName string

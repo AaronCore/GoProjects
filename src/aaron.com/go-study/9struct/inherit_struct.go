@@ -2,19 +2,19 @@ package main
 
 import "fmt"
 
-//animal 动物
+// animal 动物
 // 结构体字段的可见性：结构体中字段大写开头表示可公开访问，小写表示私有（仅在定义当前结构体的包中可访问）。
 type animal struct {
 	name string
 }
 
-func (a *animal) move() {
-	fmt.Printf("%s会动！\n", a.name)
-}
-
 type dog struct {
 	feet    int8
 	*animal //通过嵌套匿名结构体实现继承
+}
+
+func (a *animal) move() {
+	fmt.Printf("%s会动！\n", a.name)
 }
 
 func (d *dog) wang() {
