@@ -2,26 +2,6 @@ package main
 
 import "fmt"
 
-type (
-	cat struct{}
-	dog struct{}
-)
-
-type sayer interface {
-	say()
-}
-
-// 值接收者实现了接口所有的方法
-func (c cat) say() {
-	fmt.Println("喵喵喵...")
-}
-func (d dog) say() {
-	fmt.Println("汪汪汪...")
-}
-func speak(s sayer) {
-	s.say()
-}
-
 //    接口是一个或多个方法签名的集合。
 //    任何类型的方法集中只要拥有该接口'对应的全部方法'签名。
 //    就表示它 "实现" 了该接口，无须在该类型上显式声明实现了哪个接口。
@@ -76,6 +56,29 @@ func main() {
 		fmt.Println(v)
 	}
 }
+
+// sayer 接口
+type sayer interface {
+	say()
+}
+
+// 定义结构体
+type (
+	cat struct{}
+	dog struct{}
+)
+
+// 接口实现
+func (c cat) say() {
+	fmt.Println("喵喵喵...")
+}
+func (d dog) say() {
+	fmt.Println("汪汪汪...")
+}
+func speak(s sayer) {
+	s.say()
+}
+
 func justifyType(x interface{}) {
 	switch v := x.(type) {
 	case string:
@@ -85,6 +88,6 @@ func justifyType(x interface{}) {
 	case bool:
 		fmt.Printf("x is a bool is %v\n", v)
 	default:
-		fmt.Println("unsupport type！")
+		fmt.Println("unsupported type!")
 	}
 }
