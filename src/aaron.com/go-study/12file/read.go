@@ -67,7 +67,7 @@ func bufioReadFile() {
 	}
 }
 
-// ioutil打开文件
+// ioutilReadFile 打开文件
 func ioutilReadFile() {
 	content, err := ioutil.ReadFile("F:\\GoProjects\\src\\github.com\\AaronCore\\StudyGo\\1base\\1.string\\main.go")
 	if err != nil {
