@@ -1,7 +1,7 @@
 package main
 
 import (
-	"aaron.com/go-study/21_socket/2tcp_stick/proto"
+	"aaron.com/go-study/21socket/2tcp_stick/proto"
 	"fmt"
 	"net"
 )
