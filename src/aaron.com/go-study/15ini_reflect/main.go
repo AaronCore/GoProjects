@@ -30,7 +30,7 @@ func parseFile2(fileName string) {
 		MySqlConf: util.MySqlConfig{
 			UserName: "127.0.0.1",
 			PassWord: "123456",
-			DataBase: "dev",
+			DataBase: "go_sample",
 			Host:     "127.0.0.1",
 			Port:     3306,
 			TimeOut:  3600,

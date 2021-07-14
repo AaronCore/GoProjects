@@ -1,14 +1,14 @@
 package main
 
 import (
-	"aaron.com/go-study/13logger/logger_util"
+	"aaron.com/go-study/13logger/util"
 )
 
 // 声明全局接口变量
-var _ logger_util.Logger
+var _ util.Logger
 
 func main() {
-	log := logger_util.NewConsoleLogger("error")
+	log := util.NewConsoleLogger("error")
 
 	log.Debug("debug info...")
 	log.Info("info...")
@@ -20,7 +20,7 @@ func main() {
 
 	//time.Sleep(2 * time.Second)
 
-	fileLog := logger_util.NewFileLogger("info", "./", "dev.txt", 10*1024*1024)
+	fileLog := util.NewFileLogger("info", "./", "dev.txt", 10*1024*1024)
 	for i := 0; i < 100; i++ {
 		fileLog.Info("深圳市福田区...")
 	}

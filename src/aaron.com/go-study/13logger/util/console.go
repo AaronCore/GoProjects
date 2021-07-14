@@ -1,4 +1,4 @@
-package logger_util
+package util
 
 // 往终端打印log
 

@@ -1,4 +1,4 @@
-package logger_util
+package util
 
 // 往文件写Log
 
@@ -18,7 +18,7 @@ type FileLogger struct {
 	maxFileSize int64
 }
 
-// FileLogger 构造函数
+// NewFileLogger 构造函数
 func NewFileLogger(levelStr, filePath, fileName string, maxFileSize int64) *FileLogger {
 	level, err := parseLoggerLevel(levelStr)
 	if err != nil {

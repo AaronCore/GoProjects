@@ -1,4 +1,4 @@
-package logger_util
+package util
 
 import (
 	"errors"
