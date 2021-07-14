@@ -29,7 +29,7 @@ func initDb() (err error) {
 		fmt.Println("open db failed,err:", err)
 		return
 	}
-	//db.SetMaxOpenConns(1000) // 设置与数据库建立连接的最大数目
+	//db.SetMaxOpenConns(1000)  // 设置与数据库建立连接的最大数目
 	//db.SetMaxIdleConns(100)	// 设置连接池中的最大闲置连接数
 	return
 }

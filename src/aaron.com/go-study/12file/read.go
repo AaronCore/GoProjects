@@ -10,13 +10,13 @@ import (
 
 func main() {
 	//readFile()
-	//bufioReadFile()
-	ioutilReadFile()
+	//buffReadFile()
+	utilReadFile()
 }
 
-// 打开文件
+// readFile
 func readFile() {
-	file, err := os.Open("F:\\GoProjects\\src\\github.com\\AaronCore\\StudyGo\\1base\\1.string\\main.go")
+	file, err := os.Open("F:\\GoProjects\\src\\aaron.com\\go-study\\0hello_world\\main.go")
 	if err != nil {
 		fmt.Println("open file error：", err)
 		return
@@ -41,9 +41,9 @@ func readFile() {
 	}
 }
 
-// bufio打开文件
-func bufioReadFile() {
-	file, err := os.Open("F:\\GoProjects\\src\\github.com\\AaronCore\\StudyGo\\1base\\1.string\\main.go")
+// buffReadFile
+func buffReadFile() {
+	file, err := os.Open("F:\\GoProjects\\src\\aaron.com\\go-study\\0hello_world\\main.go")
 	if err != nil {
 		fmt.Println("open file error：", err)
 		return
@@ -67,9 +67,9 @@ func bufioReadFile() {
 	}
 }
 
-// ioutilReadFile 打开文件
-func ioutilReadFile() {
-	content, err := ioutil.ReadFile("F:\\GoProjects\\src\\github.com\\AaronCore\\StudyGo\\1base\\1.string\\main.go")
+// utilReadFile
+func utilReadFile() {
+	content, err := ioutil.ReadFile("F:\\GoProjects\\src\\aaron.com\\go-study\\0hello_world\\main.go")
 	if err != nil {
 		fmt.Println("read file failed, err:", err)
 		return

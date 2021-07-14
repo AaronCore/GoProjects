@@ -48,6 +48,7 @@ func main() {
 	// 格式化的模板为Go的出生时间2006年1月2号15点04分 Mon Jan
 	// time.Parse("2006-01-02 15:04:05", "2020-01-26 17:25:01")
 	// 24小时制
+	fmt.Println(now.Format("2006年01月02日 15:04:05"))
 	fmt.Println(now.Format("2006-01-02 15:04:05.000 Mon Jan"))
 	// 12小时制
 	fmt.Println(now.Format("2006-01-02 03:04:05.000 PM Mon Jan"))
