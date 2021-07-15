@@ -57,7 +57,7 @@ func copyFile(dstName, srcName string) (written int64, err error) {
 	return io.Copy(dst, src) //调用io.Copy()拷贝内容
 }
 
-// cat命令实现
+// cat 命令实现
 func cat(r *bufio.Reader) {
 	for {
 		buf, err := r.ReadBytes('\n') //注意是字符
@@ -70,6 +70,7 @@ func cat(r *bufio.Reader) {
 	}
 }
 
+// listFiles
 func listFiles(dirName string, level int) {
 	// level用来记录当前递归的层次
 	// 生成有层次感的空格

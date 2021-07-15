@@ -42,7 +42,7 @@ func buffWriteFile() {
 
 // utilWriteFile
 func utilWriteFile() {
-	str := "SaaS大"
+	str := "hello go go.."
 	err := ioutil.WriteFile("C:\\Temp\\xxx.txt", []byte(str), 0666)
 	if err != nil {
 		fmt.Println("open file error：", err)
