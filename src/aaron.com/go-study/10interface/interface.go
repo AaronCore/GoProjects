@@ -22,6 +22,10 @@ func main() {
 
 	m1.edit()
 	f1.delete()
+
+	var peo People = &Student{}
+	think := "hi"
+	fmt.Println(peo.speak(think))
 }
 
 // Usb 接口
@@ -36,6 +40,11 @@ type Keyboard interface {
 	typing()
 }
 
+// People 接口
+type People interface {
+	speak(string) string
+}
+
 // Mouse 结构体
 type Mouse struct {
 	name string
@@ -45,6 +54,9 @@ type Mouse struct {
 type FlashDisk struct {
 	name string
 }
+
+// Student 结构体
+type Student struct{}
 
 // Mouse 实现接口
 func (m Mouse) start() {
@@ -72,4 +84,13 @@ func (f FlashDisk) delete() {
 func testInterface(usb Usb) {
 	usb.start()
 	usb.end()
+}
+
+func (s *Student) speak(think string) (talk string) {
+	if think == "hi" {
+		talk = "Hello"
+	} else {
+		talk = "go go"
+	}
+	return
 }

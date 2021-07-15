@@ -61,7 +61,7 @@ type person struct {
 }
 
 // 面试题
-func study() {
+func structSample() {
 	m := make(map[string]*student)
 	students := []student{
 		{name: "pprof.cn", age: 18},
