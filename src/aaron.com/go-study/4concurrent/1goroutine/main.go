@@ -8,7 +8,13 @@ import (
 var wg sync.WaitGroup
 
 func main() {
-	for i := 1; i <= 10; i++ {
+	/*
+		WaitGroup：同步等待组
+			Add()，设置等待组中要执行的子 goroutine的数量
+			Wait()，让主goroutine出于等待
+			Done()，让等待组中的counter计数器的值减1，同Add(-1)
+	*/
+	for i := 0; i < 10; i++ {
 		wg.Add(1) // 启动一个goroutine就登记+1
 		go printNo(i)
 	}
