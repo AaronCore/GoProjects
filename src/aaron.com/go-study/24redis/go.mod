@@ -1,4 +1,4 @@
-module aaron.com/go-study/20sql_nosql/4redis
+module aaron.com/go-study/24redis
 
 go 1.16
 

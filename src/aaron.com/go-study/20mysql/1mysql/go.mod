@@ -1,4 +1,4 @@
-module aaron.com/go-study/20sql_nosql/1mysql
+module aaron.com/go-study/20mysql/1mysql
 
 go 1.16
 
