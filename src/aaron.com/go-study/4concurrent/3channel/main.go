@@ -19,7 +19,7 @@ var (
 		创建通道：如果通道为nil(就是不存在)，就需要先创建通道
 			通道名 = make(chan 数据类型)
 	双向chan：
-	chan发送、接收，chan在<-左为发送，在<-右接收
+	chan发送、接收，chan在<-左为写，在<-右为读
 		chan T -->
 			chan <- date，写，写出数据
 				例：a <- data
@@ -86,7 +86,7 @@ func main() {
 	fmt.Println("2、channel练习---通道循环取值")
 	chan1()
 
-	fmt.Println("2、channel练习---单向通道")
+	fmt.Println("3、channel练习---单向通道")
 	chan2()
 }
 
@@ -133,7 +133,7 @@ func chan2() {
 	printer(ch2) // 只读
 }
 
-// 1.ch1 chan<- int是一个只能发送的通道，可以发送但是不能接收
+// ch1 chan<- int是一个只能发送的通道，可以发送但是不能接收
 func counter(ch1 chan<- int) {
 	for i := 1; i <= 10; i++ {
 		ch1 <- i

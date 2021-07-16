@@ -56,7 +56,7 @@ func main() {
 	fmt.Println(now.Format("15:04 2006/01/02"))
 	fmt.Println(now.Format("2006/01/02"))
 
-	fmt.Println("5、练习，解析字符串格式的时间")
+	fmt.Println("6、练习，解析字符串格式的时间")
 	fmt.Println(now)
 	// 加载时区
 	loc, err := time.LoadLocation("Asia/Shanghai")
