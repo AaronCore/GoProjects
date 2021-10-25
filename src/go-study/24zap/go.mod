@@ -1,4 +1,4 @@
-module go-study/25zap
+module go-study/24zap
 
 go 1.16
 
