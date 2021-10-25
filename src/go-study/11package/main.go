@@ -1,8 +1,8 @@
 package main
 
 import (
-	"aaron.com/go-study/11package/util"
 	"fmt"
+	"go-study/11package/util"
 )
 
 /*

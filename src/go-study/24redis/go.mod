@@ -1,4 +1,4 @@
-module aaron.com/go-study/24redis
+module go-study/24redis
 
 go 1.16
 

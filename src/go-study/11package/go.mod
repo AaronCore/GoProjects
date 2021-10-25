@@ -1,3 +1,3 @@
-module aaron.com/go-study/11package
+module go-study/11package
 
 go 1.16

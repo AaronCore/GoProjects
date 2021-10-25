@@ -1,7 +1,7 @@
 package main
 
 import (
-	"aaron.com/go-study/13logger/util"
+	"go-study/13logger/util"
 )
 
 // 声明全局接口变量

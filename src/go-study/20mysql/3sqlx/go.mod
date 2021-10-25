@@ -1,4 +1,4 @@
-module aaron.com/go-study/20mysql/3sqlx
+module go-study/20mysql/3sqlx
 
 go 1.16
 

@@ -1,3 +1,3 @@
-module aaron.com/go-study/19test/split_string
+module go-study/19test/split_string
 
 go 1.16

@@ -1,4 +1,4 @@
-module aaron.com/go-study/25zap
+module go-study/25zap
 
 go 1.16
 

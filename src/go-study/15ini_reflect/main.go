@@ -1,8 +1,8 @@
 package main
 
 import (
-	"aaron.com/go-study/15ini_reflect/util"
 	"fmt"
+	"go-study/15ini_reflect/util"
 	"io/ioutil"
 )
 
