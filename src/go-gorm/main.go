@@ -5,16 +5,7 @@ import (
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
-	"time"
 )
-
-type User struct {
-	gorm.Model
-	Name     string
-	Age      uint8
-	Birthday time.Time
-	Email    string
-}
 
 func main() {
 	db, err := gorm.Open(mysql.New(mysql.Config{
@@ -35,10 +26,22 @@ func main() {
 	if err != nil {
 		fmt.Println("open mysql failed,", err)
 	}
-	err = db.AutoMigrate(&User{})
 
-	if err != nil {
-		fmt.Println("db.AutoMigrate failed,", err)
-	}
+	sqlDB, err := db.DB()
+	sqlDB.SetConnMaxIdleTime(10)
+	sqlDB.SetMaxOpenConns(200)
+
+	//err = db.AutoMigrate(&models.User{})
+	//if err != nil {
+	//	fmt.Println("db.AutoMigrate failed,", err)
+	//}
+
+	//m := db.Migrator()
+	//if m.HasTable(&models.User{}) {
+	//	m.DropTable(&models.User{})
+	//} else {
+	//	m.CreateTable(&models.User{})
+	//}
+
 	fmt.Println(db, err)
 }
