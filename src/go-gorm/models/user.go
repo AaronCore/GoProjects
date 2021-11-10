@@ -1,14 +1,20 @@
 package models
 
 import (
-	"gorm.io/gorm"
 	"time"
 )
 
+type Model struct {
+	UUID      string `gorm:"primaryKey"`
+	CreatedAt time.Time
+	UpdatedAt time.Time
+}
+
 type User struct {
-	gorm.Model
-	Name     string
+	Model    Model  `gorm:"embedded"`
+	Name     string `gorm:"not null"`
 	Age      uint8
 	Birthday time.Time
 	Email    string
+	Tel      string `gorm:"column:mobile"`
 }
