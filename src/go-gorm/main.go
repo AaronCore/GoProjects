@@ -55,7 +55,8 @@ func main() {
 	//Add()
 	//Find()
 	//Update()
-	Delete()
+	//Delete()
+	Exec()
 	//fmt.Println(db, err)
 }
 
@@ -158,5 +159,17 @@ func Delete() {
 
 	dbRes := GlobalDb.Unscoped().Where("name =?", "").Delete(&user)
 
+	fmt.Println(errors.Is(dbRes.Error, gorm.ErrRecordNotFound))
+}
+
+func Raw() {
+	var user models.User
+	dbRes := GlobalDb.Raw("SELECT * FROM t_users WHERE `uuid` = ?", "101").Scan(&user)
+	fmt.Println(errors.Is(dbRes.Error, gorm.ErrRecordNotFound))
+	fmt.Println(user)
+}
+
+func Exec() {
+	dbRes := GlobalDb.Exec("UPDATE t_users SET email = ? WHERE `uuid` = ?", "100@qq.com", "101")
 	fmt.Println(errors.Is(dbRes.Error, gorm.ErrRecordNotFound))
 }
