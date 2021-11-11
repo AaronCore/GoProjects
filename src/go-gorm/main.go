@@ -148,7 +148,6 @@ func Update() {
 
 	dbRes := GlobalDb.First(&user).Updates(models.User{Name: "A1"})
 	//dbRes := GlobalDb.First(&user).Updates(map[string]interface{}{"name": "", "age": 0})
-
 	fmt.Println(errors.Is(dbRes.Error, gorm.ErrRecordNotFound))
 }
 
@@ -156,9 +155,7 @@ func Update() {
 func Delete() {
 	var user models.User
 	//var users []models.User
-
 	dbRes := GlobalDb.Unscoped().Where("name =?", "").Delete(&user)
-
 	fmt.Println(errors.Is(dbRes.Error, gorm.ErrRecordNotFound))
 }
 
