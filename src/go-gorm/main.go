@@ -22,7 +22,7 @@ func main() {
 		DontSupportRenameColumn:   true,                                                                              // 用 `change` 重命名列，MySQL 8 之前的数据库和 MariaDB 不支持重命名列
 		SkipInitializeWithVersion: false,                                                                             // 根据当前 MySQL 版本自动配置
 	}), &gorm.Config{
-		SkipDefaultTransaction:                   false,
+		SkipDefaultTransaction:                   true,
 		DisableForeignKeyConstraintWhenMigrating: true,
 		NamingStrategy: schema.NamingStrategy{
 			TablePrefix:   "t_",
