@@ -1,3 +1,3 @@
-module go-design_patterns/01builder_pattern
+module go-patterns/01builder-pattern
 
 go 1.16
