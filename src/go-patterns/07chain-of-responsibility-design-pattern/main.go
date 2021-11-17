@@ -1,5 +1,6 @@
 package main
 
+// 责任链模式
 func main() {
 	medical := &medical{}
 

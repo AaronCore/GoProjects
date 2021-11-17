@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// 单例模式
 func main() {
 	for i := 0; i < 100; i++ {
 		go GetInstance()

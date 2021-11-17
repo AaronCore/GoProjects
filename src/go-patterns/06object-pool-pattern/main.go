@@ -5,6 +5,7 @@ import (
 	"strconv"
 )
 
+// 对象池模式
 func main() {
 	connections := make([]iPoolObject, 0)
 	for i := 0; i < 3; i++ {

@@ -1,5 +1,6 @@
 package main
 
+// 命令模式
 func main() {
 	tv := &tv{}
 	onCommand := &onCommand{
