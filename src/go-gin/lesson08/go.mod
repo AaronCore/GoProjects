@@ -1,4 +1,4 @@
-module go-gin/lesson07
+module go-gin/lesson08
 
 go 1.16
 
