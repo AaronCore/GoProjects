@@ -1,4 +1,4 @@
-module go-gorm
+module go-gorm/crud
 
 go 1.16
 

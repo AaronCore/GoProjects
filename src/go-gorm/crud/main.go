@@ -3,7 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
-	"go-gorm/models"
+	"go-gorm/crud/models"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
