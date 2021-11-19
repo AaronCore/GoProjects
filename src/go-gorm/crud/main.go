@@ -3,16 +3,17 @@ package main
 import (
 	"errors"
 	"fmt"
+	"time"
+
 	"go-gorm/crud/models"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
-	"time"
 )
 
 var GlobalDb *gorm.DB
 
-// https://gorm.io/zh_CN/docs/
+// gorm doc: https://gorm.io/zh_CN/docs/
 func main() {
 	db, err := gorm.Open(mysql.New(mysql.Config{
 		DSN:                       "root:123123@tcp(127.0.0.1:3306)/go_sample?charset=utf8&parseTime=True&loc=Local", // DSN data source name
