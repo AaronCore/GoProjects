@@ -19,7 +19,7 @@ func CreateTodo(c *gin.Context) {
 	// 前端页面填写待办事项 点击提交 会发请求到这里
 	// 1. 从请求中把数据拿出来
 	var todo models.Todo
-	c.BindJSON(&todo)
+	_ = c.BindJSON(&todo)
 	// 2. 存入数据库
 	err := models.CreateATodo(&todo)
 	if err != nil {
@@ -55,7 +55,7 @@ func UpdateATodo(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"error": err.Error()})
 		return
 	}
-	c.BindJSON(&todo)
+	_ = c.BindJSON(&todo)
 	if err = models.UpdateATodo(todo); err != nil {
 		c.JSON(http.StatusOK, gin.H{"error": err.Error()})
 	} else {
