@@ -24,5 +24,5 @@ func InitMySQL(cfg *setting.MySQLConfig) (err error) {
 }
 
 func Close() {
-	DB.Close()
+	_ = DB.Close()
 }
