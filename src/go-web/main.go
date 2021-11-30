@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
+	"os"
+
 	"go-web/dao"
 	"go-web/models"
 	"go-web/routers"
 	"go-web/setting"
-	"os"
 )
 
 func main() {

@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"gopkg.in/ini.v1"
 	"os"
+
+	"gopkg.in/ini.v1"
 )
 
 // doc：https://ini.unknwon.cn/

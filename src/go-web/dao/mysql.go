@@ -2,7 +2,6 @@ package dao
 
 import (
 	"fmt"
-
 	"go-web/setting"
 
 	"github.com/jinzhu/gorm"

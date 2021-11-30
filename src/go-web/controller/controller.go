@@ -1,9 +1,11 @@
 package controller
 
 import (
-	"github.com/gin-gonic/gin"
 	"go-web/models"
+
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 /*
