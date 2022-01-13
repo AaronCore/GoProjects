@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// 桥接模式
 func main() {
 	hpPrinter := &hp{}
 	epsonPrinter := &epson{}
